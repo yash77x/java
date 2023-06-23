@@ -1,6 +1,6 @@
 public class Return{
 	public static void main(String[] args){
-		byte age=byte();
+		byte age=byted();
 		System.out.println(age);
 
 		int multiplied=intd();
@@ -9,13 +9,13 @@ public class Return{
 		short result=shortd();
 		System.out.println(result);
 
-		long number=long();
+		long number=longd();
 		System.out.println(number);
 
 		char days=chard();
 		System.out.println(days);
 
-		float subtract=float();
+		float subtract=floatd();
 		System.out.println(subtract);
 
 		double pi=doubled();
