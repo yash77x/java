@@ -16,7 +16,12 @@ public class Runner{
 
         Telivision tv5 = new Telivision(true, true, 2021, "LCD", "grey", 4, 3.5f, 52);
         System.out.println(tv5.usbPorts);
+
         Telivision.run();
+        Telivision.playMovie();
+        Telivision.playSong();
+        Telivision.volume();
+
     }
 }
 
