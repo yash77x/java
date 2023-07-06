@@ -36,8 +36,20 @@ class Telivision{
         brand = "sony";
         System.out.println(brand);
     }
-    
+
     public static void run(){
+        System.out.println("Static method");
+    }
+
+    public static void playMovie(){
+        System.out.println("Static method");
+    }
+
+    public static void playSong(){
+        System.out.println("Static method");
+    }
+
+    public static void volume(){
         System.out.println("Static method");
     }
 
