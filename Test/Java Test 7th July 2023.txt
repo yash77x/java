@@ -1,0 +1,249 @@
+Aptitude
+
+1. (b) Brother
+2. (b) Grandfather
+3. (d) Cannot be dertermined
+4. (d) brother
+5. (c) Grandson
+6. (c) X+A*Y
+7. (c) R
+8. (b) brother-in-law
+9. (a) Father
+10. (c) S
+11. (a) 10km
+12. (a) North
+13. (c) North-East
+14. (b) South-East
+
+Theory
+
+1. Constructor: it is a block of code which is executed whenever an object is created.
+it is used inside a class and outside the main function.
+
+there are 3 rules:
+(i) constructor name should always be same as the class name.
+(ii) there is no explicit function.
+(iii) It should not contain static and final keyword
+
+ex:
+public Test{
+	public static void main(String[] args){
+		Test();
+	}
+	public Test(){
+	
+	}
+}
+
+2. Types of Constructor
+There are 2 types of constructor:
+(i) Default Constructor
+(ii) Parameterized Constructor
+
+(i) Default Constructor: it is the constructor which does not contain any parameters while creating constructor. it just displays the default value of the datatypes that are used to store the variables.
+ex:
+public Test{
+	int marks;
+	String testOn;
+
+	public static void main(String[] args){
+		Test test = new Test();
+		System.out.println(test.marks);
+		System.out.println(test.testOn);
+	}
+	public Test(){
+		//default Constructor
+	}
+}
+
+(ii) Parameterized Constructor: it is the constructor which contains the parameters while creating constructor. It creates an object by storing the data in it that are given using parameters.
+ex:
+public Test{
+	int marks;
+	String testOn;
+
+	public static void main(String[] args){
+
+		Test test = new Test(45,"Java");
+		System.out.println(test.marks);
+		System.out.println(test.testOn);
+	}
+	public Test(int marks, String testOn){
+		this.marks = marks;
+		this.testOn = testOn;
+	}
+}
+
+3. Object: It is an entity that contains the class. It represents state and behaviour.
+where state is the features of the object
+and Behaviour is the action that are done by the object.
+It is used with the new keyword.
+
+4. Class: It is the blueprint of the object that are used to create the object.
+class name should contain a caps letter at the start.
+
+5. Method Overloading: which has same method name but differnt in parameters is called method overloading.
+it can be done using 3 ways:
+(i) changing the number of parameters.
+(ii) changing the datatype of the parameters.
+(iii) changing the order of the datatype.
+ex:
+add(2,4);         // int int datatype
+add(2,4,6);       // int int int datatype. changing number of parameters
+add(2,byte(4));  // int byte datatype. changing datatype
+add(byte(2), 4);  // byte int datatype. changing order of datatype
+
+6. Variables: It is a container that stores values in it. 
+The variable name should not start with numbers instead of alphabet.
+there are 3 types of variables:
+(i) instance variable
+(ii) local variable
+(iii) static variable
+
+(i) instance variable: it is the class level variable that are declared inside the class and outside main method.
+
+(ii) local variable: It is the variable the are declared inside method and cannot be used outside method.
+
+(iii) static variable: the state which has common for everything can be used as static variable which is constant for everything.
+
+7. this keyword: It is a keyword that is used inside a constructor where to differenciate between class level variable and method or local variable to store in class level variable.
+
+8. String: It is a sequence of characters that are used to store inside a variable.
+String is also called as an class.
+String is Immutable
+String can be used in 2 ways 
+first is literals and second is using new keyword
+
+9. methods of String
+
+(i) strCompare(): it is a string method that is used to compare 2 strings and displays true or false.
+ex:
+String name = "Yash";
+name.strCompare("Yash");    //true
+
+(ii) isEmpty(): It is used to check whether the string is empty or not
+String name = "";
+name.isEmpty();     //true
+
+(iii) strConcat(): It is used to add or concatenate to the string.
+String name = "xwork";
+name.strConcat("z");      //xworkz
+
+(iv) strLowerCase(): It is used to convert uppercase letter to lowercase
+String name = "KARNATAKA";
+name.strLowerCase();      //karnataka
+
+(v) strUpperCase(): It is used to convert lowercase letter to uppercase
+String name = "xworkz";
+name.strUpperCase();      //XWORKZ
+
+10. String is immutable because it cannot be changed again.
+
+
+Programming
+
+2. 
+public Test{
+	int marks;
+	String testOn;
+	boolean isItDifficult;
+	
+	public Test(int marks, String testOn, boolean isItDifficult){
+		this.marks = marks;
+		this.testOn = testOn;
+	}
+
+	public static void main(String[] args){
+
+		Test test = new Test(45, "Java", true);
+		System.out.println(test.marks);
+		System.out.println(test.testOn);
+		System.out.println(test.isItDifficult);
+	}
+
+}
+
+1. 
+public Test{
+	public static void main(String[] args){
+		Laptop laptop = new Laptop("Lenovo", "Ideapad", 8, 512, 65000);
+		System.out.println(laptop.ram);
+		System.out.println(laptop.brandName);
+	}
+}
+
+class Laptop(){
+	String brandName;
+	String model;
+	int ram;
+	int storage;
+	int price;
+	
+	public Laptop(String brandName, String model, int ram, int storage, int price){
+		this.brandName = brandName;
+		this.model = model;
+		this.ram = ram;
+		this.storage = storage;
+		this.price = price;
+	}
+}
+
+
+3.
+(ii) Camera
+public Camera{
+	int megapixel;
+	String brand;
+	String model;
+	int warranty;
+	boolean ispowerSocket;
+	int noOfButtons;
+
+	public static void main(String[] args){
+		vewImage();
+		playVideo();
+		saveImage();
+	}
+	
+	public static void vewImage(){
+
+	}
+
+	public static void playVideo(){
+
+	}
+
+	public static void saveImage(){
+
+	}
+}
+
+
+(iii) Headphone 
+
+public Headphone{
+	String brand;
+	String model;
+	int warranty;
+	String quality;
+	boolean isMicGood;
+	int range;
+	String connectivity;
+
+	public static void main(String[] args){
+		listenSong();
+		talkOnCall();
+	}
+	
+	public static void listenSong(){
+
+	}
+
+	public static void talkOnCall(){
+
+	}
+
+}
+
+
+
