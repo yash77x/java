@@ -1,0 +1,134 @@
+Java Test
+
+1. output: 11 34
+
+2. It will show an error because the static variables cannot be decalred inside main method.
+instead we can change the program by declaring outside main
+class User{
+	static String userName="zudio";
+	public static void main(String[] args){
+	System.out.println(userName);
+}
+}
+
+3. It will show an error because the static variable should be assigned at the time of variable declaration. the updated code will be
+class Hello{
+    static int a = 50;
+    public static void main(String[] args){
+        System.out.println(Hello.a);
+}
+}
+
+4. It will display the length of the list which is 4 and adds them.
+(10,30,50,100) 
+length = 4
+sum = 190
+
+6. Method Parameters: The parameters are the datatypes that are declared inside method braces.
+class Hello{
+    public static void main(String[] args){
+	num(2);
+}
+void num(int a){
+        System.out.println(a);
+
+}
+}
+
+7. Compile time Polymorphism: It is also called as Method Overloading. which means that a method having same name but different in parameters.
+3 ways :
+1. changing the number of parameters
+2. changing the order of parameters
+3. changing datatype of parameters
+ex:
+
+add(2,4);         // int int datatype
+add(2,4,6);       // int int int datatype. changing number of parameters
+add(2,byte(4));  // int byte datatype. changing datatype
+add(byte(2), 4);  // byte int datatype. changing order of datatype
+
+9. Package: It is the reverse domain plus folder name.
+ex: com.xworkz.inheritance
+here com.xworkz is a reverse domain and .inheritance is a folder name where all the java files are stored
+the package name should be always in lower case letters.
+after creating a java file it will show an package statement in the first line of the java file.
+
+import: when a child class and parent class both are in different packages and the child class needs to inherit the properties of the parent class the import will be used in child class to import the parent class to child class package.
+ex: parent class is present in com.xworkz.parent
+    child class is present in com.xworkz.child
+    In child class we use com.xworkz.parent.parent.parentclass to inherit the properties of parent class through different package.
+
+10. Constructor chaining: constructors chaining is the process of calling a constructor from another constructor.
+It can be done in two ways:
+1. this keyword
+2. super keyword
+
+1. this keyword: It is used as constructor chaining when a constructor needs to be called inside same class.
+ex: 
+class College{
+	int noOfStudents;
+	String nameOfStudent;
+	String subject;
+College(int noOfStudents, String nameOfStudent){ //constructor
+	this.noOfStudents = noOfStudents;
+	this.nameOfStudent = nameOfStudent;
+}
+
+College(int noOfStudents, String nameOfStudent, String subject){
+	this(noOfStudents,nameOfStudent); //this chaining
+	this.subject = subject;
+}
+}
+
+2. super: It is used as constructor chaining when a constructor needs to be called from one class to another class we will use super chaining.
+ex:
+class College{
+	int noOfStudents;
+	String subject;
+College(int noOfStudents, String nameOfStudent){ //constructor
+	this.noOfStudents = noOfStudents;
+	this.nameOfStudent = nameOfStudent;
+}
+}
+
+class Student extends College{
+	String nameOfStudent;
+Student(int noOfStudents, String nameOfStudent, String nameOfStudent){
+	super(noOfStudents, subject);
+	this.nameOfStudent = nameOfStudent;
+}
+}
+
+14. Enumeration: It is a special class where the constants are declared.
+these will be constants and will be used on every object creation.
+while initializing we need to take enum name as a datatype and provide a reference to store.
+ex:
+class Shoes{
+	int a = 50;
+	Color color = Color.BLACK;
+
+    public static void main(String[] args){
+        System.out.println(a);
+        System.out.println(color);
+}
+}
+
+enum Color{
+	BLACK, BLUE, WHITE;
+}
+
+
+15. when we create an object the jvm will create an stack memory and store as instance memory to perform further operation.
+
+16. Members of class:
+1. variable
+2. static
+
+
+SQL
+
+1. Create database_name;
+
+2. Create table table_name;
+
+4. drop column_name from table_name;
