@@ -1,11 +1,13 @@
 package com.xworkz.validateandsave.service;
 
 import com.xworkz.validateandsave.dto.LabourDTO;
+import com.xworkz.validateandsave.dto.MovieDTO;
 import com.xworkz.validateandsave.repository.LabourRepoImpl;
 import com.xworkz.validateandsave.repository.LabourRepository;
 import com.xworkz.validateandsave.util.Validation;
 
 public class LabourServiceImpl implements LabourService {
+	LabourRepository repository = new LabourRepoImpl();
 
 	@Override
 	public boolean validateAndSave(LabourDTO dto) {
@@ -43,7 +45,6 @@ public class LabourServiceImpl implements LabourService {
 				return false;
 			}
 			
-			LabourRepository repository = new LabourRepoImpl();
 			repository.save(dto);
 			return true;
 			
@@ -51,6 +52,26 @@ public class LabourServiceImpl implements LabourService {
 			System.err.println("null");
 		}
 		return false;
+	}
+
+	@Override
+	public LabourDTO findByName(String name) {
+		if(Validation.stringValidate(name)) {
+			LabourDTO found = repository.findByName(name);
+			return found;
+		}
+		System.err.println("Data is not valid");
+		return null;
+		}
+
+	@Override
+	public LabourDTO findByNameAndAge(String name, int age) {
+		if(Validation.stringValidate(name) && age > 0 && age < 100) {
+			LabourDTO found1 = repository.findByNameAndAge(name, age);
+			return found1;
+		}
+		System.err.println("Data is not valid");
+		return null;
 	}
 
 }

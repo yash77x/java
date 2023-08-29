@@ -19,4 +19,32 @@ public class MovieRepoImpl implements MovieRepository {
 		}
 	}
 
+	@Override
+	public MovieDTO findByMovieName(String name) {
+		for(int i=0; i<index; i++) {
+			if(dtos[i].getMovieName().equalsIgnoreCase(name)) {
+				System.out.println("Movie found ");
+				System.out.println(dtos[i]);
+				return dtos[i];
+			}
+			System.out.println("Movie not found, checking another..");
+		}
+		System.err.println("Movie not found");
+		return null;
+	}
+
+	@Override
+	public MovieDTO findByMovieNameAndYear(String name, int year) {
+		for(int i=0; i<index; i++) {
+			if(dtos[i].getMovieName().equalsIgnoreCase(name) && dtos[i].getYear()==year) {
+				System.out.println("Movie found ");
+				System.out.println(dtos[i]);
+				return dtos[i];
+			}
+			System.out.println("Movie not found, checking another..");
+		}
+		System.err.println("Movie not found");
+		return null;
+	}
+
 }

@@ -6,6 +6,8 @@ import com.xworkz.validateandsave.repository.MovieRepository;
 import com.xworkz.validateandsave.util.Validation;
 
 public class MovieServiceImpl implements MovieService {
+	MovieRepository repository = new MovieRepoImpl();
+
 
 	@Override
 	public boolean validateAndSave(MovieDTO dto) {
@@ -43,11 +45,30 @@ public class MovieServiceImpl implements MovieService {
 				return false;
 			}
 			
-			MovieRepository repository = new MovieRepoImpl();
 			repository.save(dto);
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	public MovieDTO findByMovieName(String name) {
+		if(Validation.stringValidate(name)) {
+			MovieDTO found = repository.findByMovieName(name);
+			return found;
+		}
+		System.err.println("Data is not valid");
+		return null;
+	}
+
+	@Override
+	public MovieDTO findByMovieNameAndYear(String name, int year) {
+		if(Validation.stringValidate(name) && year>=2000 && year<=2023) {
+			MovieDTO found1 = repository.findByMovieNameAndYear(name, year);
+			return found1;
+		}
+		System.err.println("Data is not valid");
+		return null;
 	}
 
 }
