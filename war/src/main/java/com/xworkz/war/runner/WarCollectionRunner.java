@@ -32,17 +32,16 @@ public class WarCollectionRunner {
 		Collection<WarDTO> warDTOs = new HashSet<WarDTO>();
 		warDTOs.add(warDTO);
 		
-		List<String> war = warDTOs
+		List<PresidentDTO> war = warDTOs
 				.stream()
 				.flatMap(c->c.getCountries().stream())
-				.map(p->p.getPresidentDTO().getName())
+				.map(p->p.getPresidentDTO())
 				.collect(Collectors.toList());
 		war.forEach(v->System.out.println(v));
 		
-		List<String> war1 = warDTOs
+		List<CountryDTO> war1 = warDTOs
 				.stream()
 				.flatMap(c->c.getCountries().stream())
-				.map(s->s.getName())
 				.collect(Collectors.toList());
 		war1.forEach(v->System.out.println(v));
 		
